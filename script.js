@@ -14,12 +14,9 @@ const excludedArticles = /^(a |an |the )/i;
 const sortedBandNames = bandNames.sort((a, b) =>
   a.replace(excludedArticles, "").localeCompare(b.replace(excludedArticles, ""))
 );
-
-const bandsList = document.getElementById("bands");
-
 sortedBandNames.forEach((bandName) => {
   const listItem = document.createElement("li");
   listItem.textContent = bandName;
-  bandsList.appendChild(listItem);
+  document.getElementById("bands").appendChild(listItem);
 });
 
